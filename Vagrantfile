@@ -11,8 +11,19 @@ Vagrant.configure("2") do |config|
 
     ansible.config_file = "ansible.cfg"
 
+    # Download roles from https://galaxy.ansible.com
+    # ansible.galaxy_role_file = "galaxy-requirements.yml"
+
+    # Folder where to put downloaded roles
+    # ansible.galaxy_roles_path = "roles"
+
     # Install Ansible using pip instead of the package manager
     ansible.install_mode = "pip"
+
+    # Set verbose option to get more debug output
+    # ansible.verbose = "vv"  # false or anywhere from "v" to "vvvv"
+
+    ansible.playbook = "playbook.yml"
 
     # Often a good idea to freeze it to a specific version
     # to ensure that your playbooks work a year later
@@ -22,9 +33,5 @@ Vagrant.configure("2") do |config|
     ansible.version = "latest"
 
 
-    ansible.playbook = "playbook.yml"
-
-    # Set verbose option to get more debug output
-    # ansible.verbose = "vv"  # false or anywhere from "v" to "vvvv"
   end
 end
