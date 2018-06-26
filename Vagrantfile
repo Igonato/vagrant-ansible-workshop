@@ -31,7 +31,5 @@ Vagrant.configure("2") do |config|
 
     # Setting version to "latest" keeps ansible updated
     ansible.version = "latest"
-
-
   end
 end
